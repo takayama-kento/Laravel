@@ -4,7 +4,7 @@ import router from './router'
 // ルートコンポーネントをインポートする
 import App from './App.vue'
 
-import store from './App.vue'
+import store from './store'
 
 import './bootstrap'
 

@@ -15,7 +15,7 @@
     <div class="panel" v-show="tab === 1">
       <form class="form" @submit.prevent="login">
         <label for="login-email">Email</label>
-        <input type="text" class="form__item" id="login-email" v-modl="loginForm.email">
+        <input type="text" class="form__item" id="login-email" v-model="loginForm.email">
         <label for="login-password">Password</label>
         <input type="password" class="form__item" id="login-password" v-model="loginForm.password">
         <div class="form__button">
@@ -62,8 +62,12 @@ export default {
     login() {
       console.log(this.loginForm)
     },
-    register() {
-      console.log(this.registerForm)
+    async register() {
+      // authストアのregisterアクションを呼び出す
+      await this.$store.dispatch('auth/register', this.registerForm)
+
+      // トップページに移動する
+      this.$router.push('/')
     },
   }
 }
