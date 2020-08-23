@@ -11,7 +11,7 @@
         </button>
       </div>
       <span v-if="isLogin" class="navbar__item">
-        username
+        {{ username }}
       </span>
       <div v-else class="navbar__item">
         <RouterLink class="button button--link" to="/login">

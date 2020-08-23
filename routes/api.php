@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,6 @@ Route::post('/login', 'Auth\LoginController@login')->name('login');
 
 // ログアウト
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+// ログインユーザー
+Route::get('/user', fn() => Auth::user())->name('user');

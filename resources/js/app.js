@@ -8,10 +8,16 @@ import store from './store'
 
 import './bootstrap'
 
-new Vue({
-    el: '#app',
-    router,
-    store,
-    components: { App },
-    template: '<App />'
-})
+const createApp = async() => {
+    await store.dispatch('auth/currentUser')
+
+    new Vue({
+        el: '#app',
+        router,
+        store,
+        components: { App },
+        template: '<App />'
+    })
+}
+
+createApp()
