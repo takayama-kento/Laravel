@@ -6,6 +6,8 @@ import App from './App.vue'
 
 import store from './App.vue'
 
+import './bootstrap'
+
 new Vue({
     el: '#app',
     router,
