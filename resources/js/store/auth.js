@@ -57,7 +57,7 @@ const actions = {
 
         context.commit('setApiStatus', false)
         if (response.status === UNPROCESSABLE_ENTITY) {
-            context.commit('setLoginErrorMessages', response.data.error)
+            context.commit('setLoginErrorMessages', response.data.errors)
         } else {
             context.commit('error/setCode', response.status, { root: true })
         }
