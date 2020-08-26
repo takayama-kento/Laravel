@@ -33,5 +33,5 @@ Route::post('/photos', 'PhotoController@create')->name('photo.create');
 // 写真一覧
 Route::get('/photos', 'PhotoController@index')->name('photo.index');
 
-// 写真ダウンロード
-Route::get('/photos/{photo}/download', 'PhotoController@download');
+// 写真詳細
+Route::get('/photos/{id}', 'PhotoController@show')->name('photo.show');

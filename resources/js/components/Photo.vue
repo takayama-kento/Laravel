@@ -9,7 +9,7 @@
         </figure>
         <RouterLink
             class="photo__overlay"
-            :to="`/photo/${item.id}`"
+            :to="`/photos/${item.id}`"
             :title="`View the photo by ${item.owner.name}`"
         >
         <div class="photo__controls">
