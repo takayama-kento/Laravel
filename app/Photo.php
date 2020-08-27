@@ -63,6 +63,15 @@ class Photo extends Model
     }
 
     /**
+     * リレーションシップ - commentsテーブル
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment')->orderBy('id', 'desc');
+    }
+
+    /**
      * アクセサ - url
      * @return string
      */
@@ -76,7 +85,7 @@ class Photo extends Model
         'url',
     ];
     protected $visible = [
-        'id', 'owner', 'url',
+        'id', 'owner', 'url', 'comments',
     ];
 
     protected $perPage = 15;
